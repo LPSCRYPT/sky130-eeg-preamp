@@ -1,0 +1,30 @@
+Rev G: differential PWL EEG superposed on a DC electrode offset; pre-layout only
+.lib "$model" tt
+.include "$dut"
+.temp 27
+.options klu method=gear maxord=2 reltol=1e-5 abstol=1e-13 vntol=1e-8
+VDD avdd 0 3.3
+VCM vref 0 1.65
+IREF ref 0 8u
+VOFF off 0 $offset
+VEEG diff off PWL(0 0 0.0125 0
+$pwl
++ )
+EP psrc vref diff 0 0.5
+EN nsrc vref diff 0 -0.5
+RP psrc inp $rp
+RN nsrc inn $rn
+XDUT avdd 0 vref ref inp inn outp outn tbci_native_input
+RLP outp vref 4.915meg
+RLN outn vref 4.915meg
+CLP outp vref 100f
+CLN outn vref 100f
+.control
+set numdgt=15
+set wr_singlescale
+save v(outp) v(outn) v(diff)
+tran 6.25m 4.01875 0 6.25m
+wrdata trace.dat v(outp) v(outn) v(diff)
+quit
+.endc
+.end

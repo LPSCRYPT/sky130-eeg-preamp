@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="248" viewBox="0 0 840 248" role="img" aria-labelledby="title desc">
+  <title id="title">Proposed Rev G package test connections</title>
+  <desc id="desc">Two guarded synthetic source legs use dedicated pads. The high-impedance core drains feed proposed buffers, not cables. Shared lines read each buffered output and bring in a quiet 1.65 volt reference. One harness reference source feeds a proposed sink mirror on chip. The fourth shared line is unused.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334e62"/></marker>
+  </defs>
+  <rect width="840" height="248" rx="8" fill="#fff"/>
+  <rect x="202" y="8" width="450" height="232" rx="9" fill="#eff5f8" stroke="#7893a1"/>
+  <g font-family="sans-serif" fill="#19394d">
+    <g font-size="16" font-weight="bold"><text x="12" y="34">Calibrated fixture</text><text x="222" y="34">Proposed slot · 3.3 V / AVSS</text><text x="680" y="34">Bench readout</text></g>
+    <rect x="301" y="60" width="144" height="87" rx="5" fill="#fff" stroke="#217577" stroke-width="2"/>
+    <rect x="480" y="60" width="119" height="87" rx="5" fill="#fff" stroke="#217577" stroke-width="2"/>
+    <g text-anchor="middle" font-size="16" font-weight="bold"><text x="373" y="97">Rev G</text><text x="539" y="97">Test buffers</text></g>
+    <g text-anchor="middle" font-size="14"><text x="373" y="119">differential core</text><text x="539" y="119">one per drain</text></g>
+    <g font-size="15"><text x="12" y="79">Source + / Rₚ</text><text x="12" y="126">Source − / Rₙ</text><text x="212" y="79">VINP</text><text x="212" y="126">VINN</text><text x="680" y="79">Bus 1 · OUTP</text><text x="680" y="126">Bus 2 · OUTN</text><text x="12" y="174">Quiet 1.65 V</text><text x="212" y="173">Bus 3 → VCM return</text><text x="222" y="216">Harness I source → sink mirror → IREF_SINK (8 µA)</text><text x="680" y="179">Bus 4 · unused</text></g>
+  </g>
+  <g stroke="#334e62" stroke-width="1.8" fill="none" marker-end="url(#arr)">
+    <path d="M12 85H294"/><path d="M12 132H294"/><path d="M445 85H476"/><path d="M445 132H476"/><path d="M599 85H817"/><path d="M599 132H817"/><path d="M12 180H401V150"/>
+  </g>
+  <g fill="#217577"><circle cx="202" cy="85" r="4"/><circle cx="202" cy="132" r="4"/></g>
+</svg>

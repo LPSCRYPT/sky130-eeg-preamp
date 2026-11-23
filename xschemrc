@@ -1,0 +1,15 @@
+# Project-local Xschem configuration; preserve installed standard/PDK libraries.
+set env(PDK) sky130A
+set env(PDKPATH) $env(PDK_ROOT)/sky130A
+set env(SPICE_USERINIT_DIR) $env(PDKPATH)/libs.tech/ngspice
+set env(STD_CELL_LIBRARY) sky130_fd_sc_hd
+set tbci_hardware_root [file dirname [file normalize [info script]]]
+source $env(PDK_ROOT)/sky130A/libs.tech/xschem/xschemrc
+append XSCHEM_LIBRARY_PATH :$tbci_hardware_root/afe/xschem
+if {[file isdirectory $tbci_hardware_root/vendor/sky130_pa_ip__instramp/xschem]} {
+    append XSCHEM_LIBRARY_PATH :$tbci_hardware_root/vendor/sky130_pa_ip__instramp/xschem
+}
+set netlist_type spice
+set top_is_subckt 1
+set spiceprefix 1
+set local_netlist_dir 0

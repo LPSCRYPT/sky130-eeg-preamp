@@ -1,0 +1,767 @@
+{
+  "dut_sha256": "0292426692c3abbda6843b83bd28b3bd1e3854ef3a97e24b759a5650a6de0c74",
+  "conditions": 8,
+  "scope": "Isolated pre-layout channel; ideal supplies/reference, modeled bench resistors. No pads, driver, extracted parasitics or startup qualification.",
+  "results": [
+    {
+      "corner": "tt_mm",
+      "temperature_C": 27,
+      "supply_V": 3.3,
+      "mismatch_seed": 301,
+      "output_differential_offset_V": 0.005890799999999974,
+      "supply_current_A_including_reference_leg": 5.04272899e-05,
+      "output_common_mode_V": 2.70736547,
+      "max_nominal_input_current_A": 1.67073073e-18,
+      "gain_10Hz_V_per_V": 4.16723781,
+      "differential_Zin_10Hz_ohm": 1178993660.0,
+      "input_noise_0p5_to_45Hz_Vrms": 5.79086809e-07,
+      "source_imbalance_10k_CMRR_dB": {
+        "50": 93.35482357426523,
+        "60": 91.9947887274183
+      },
+      "negative_leg_imbalance_10k_CMRR_dB": {
+        "50": 86.64260133775295,
+        "60": 86.12413911536973
+      },
+      "dc_offset_cases": [
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.51026141,
+          "outn_V": 2.91128417,
+          "incremental_gain_V_per_V": 3.975574999999898,
+          "max_abs_input_current_A": 7.94700758e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50428202,
+          "outn_V": 2.91063306,
+          "incremental_gain_V_per_V": 4.0274099999999535,
+          "max_abs_input_current_A": 7.94899207e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.49970202,
+          "outn_V": 2.91018106,
+          "incremental_gain_V_per_V": 4.067244999999886,
+          "max_abs_input_current_A": 7.94901878e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.71361222,
+          "outn_V": 2.70777085,
+          "incremental_gain_V_per_V": 4.112384999999996,
+          "max_abs_input_current_A": 7.15411493e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.71031087,
+          "outn_V": 2.70442007,
+          "incremental_gain_V_per_V": 4.167020000000132,
+          "max_abs_input_current_A": 1.67073073e-18
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.7078097,
+          "outn_V": 2.70188082,
+          "incremental_gain_V_per_V": 4.209649999999954,
+          "max_abs_input_current_A": 7.15411402e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91675904,
+          "outn_V": 2.50441925,
+          "incremental_gain_V_per_V": 3.967849999999995,
+          "max_abs_input_current_A": 7.94901965e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91615332,
+          "outn_V": 2.49839309,
+          "incremental_gain_V_per_V": 4.019234999999899,
+          "max_abs_input_current_A": 7.9489912e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91573547,
+          "outn_V": 2.49377683,
+          "incremental_gain_V_per_V": 4.059075000000023,
+          "max_abs_input_current_A": 7.94700673e-10
+        }
+      ]
+    },
+    {
+      "corner": "tt_mm",
+      "temperature_C": 27,
+      "supply_V": 3.3,
+      "mismatch_seed": 302,
+      "output_differential_offset_V": -0.0006091700000001588,
+      "supply_current_A_including_reference_leg": 5.00764681e-05,
+      "output_common_mode_V": 2.707162085,
+      "max_nominal_input_current_A": 2.32962954e-18,
+      "gain_10Hz_V_per_V": 4.17146386,
+      "differential_Zin_10Hz_ohm": 1178895690.0,
+      "input_noise_0p5_to_45Hz_Vrms": 5.72549226e-07,
+      "source_imbalance_10k_CMRR_dB": {
+        "50": 90.12631867930715,
+        "60": 89.19772979769719
+      },
+      "negative_leg_imbalance_10k_CMRR_dB": {
+        "50": 91.7513562618474,
+        "60": 90.54919203855646
+      },
+      "dc_offset_cases": [
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50669104,
+          "outn_V": 2.91434607,
+          "incremental_gain_V_per_V": 3.974920000000104,
+          "max_abs_input_current_A": 7.94895009e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50068026,
+          "outn_V": 2.91372457,
+          "incremental_gain_V_per_V": 4.026420000000197,
+          "max_abs_input_current_A": 7.94892269e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.49607479,
+          "outn_V": 2.91329405,
+          "incremental_gain_V_per_V": 4.0663750000000665,
+          "max_abs_input_current_A": 7.94812258e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.71018914,
+          "outn_V": 2.71078998,
+          "incremental_gain_V_per_V": 4.116459999999877,
+          "max_abs_input_current_A": 7.15405236e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.7068575,
+          "outn_V": 2.70746667,
+          "incremental_gain_V_per_V": 4.171310000000039,
+          "max_abs_input_current_A": 2.32962954e-18
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.7043317,
+          "outn_V": 2.70494813,
+          "incremental_gain_V_per_V": 4.213880000000003,
+          "max_abs_input_current_A": 7.15405143e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91369382,
+          "outn_V": 2.50718507,
+          "incremental_gain_V_per_V": 3.976060000000059,
+          "max_abs_input_current_A": 7.94812356e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91306313,
+          "outn_V": 2.50118078,
+          "incremental_gain_V_per_V": 4.027739999999724,
+          "max_abs_input_current_A": 7.948922e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.9126254,
+          "outn_V": 2.49658071,
+          "incremental_gain_V_per_V": 4.06753999999987,
+          "max_abs_input_current_A": 7.94894923e-10
+        }
+      ]
+    },
+    {
+      "corner": "tt_mm",
+      "temperature_C": 27,
+      "supply_V": 3.3,
+      "mismatch_seed": 303,
+      "output_differential_offset_V": -0.007059470000000179,
+      "supply_current_A_including_reference_leg": 5.03871313e-05,
+      "output_common_mode_V": 2.705132655,
+      "max_nominal_input_current_A": 2.42193417e-18,
+      "gain_10Hz_V_per_V": 4.15260537,
+      "differential_Zin_10Hz_ohm": 1178925340.0,
+      "input_noise_0p5_to_45Hz_Vrms": 5.78998276e-07,
+      "source_imbalance_10k_CMRR_dB": {
+        "50": 87.18667277785526,
+        "60": 86.61837939061654
+      },
+      "negative_leg_imbalance_10k_CMRR_dB": {
+        "50": 93.48194449128587,
+        "60": 92.03440276854604
+      },
+      "dc_offset_cases": [
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50101476,
+          "outn_V": 2.91340031,
+          "incremental_gain_V_per_V": 3.961199999999998,
+          "max_abs_input_current_A": 7.94877138e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.49497026,
+          "outn_V": 2.91275077,
+          "incremental_gain_V_per_V": 4.012575000000185,
+          "max_abs_input_current_A": 7.94980999e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.49034206,
+          "outn_V": 2.9123008,
+          "incremental_gain_V_per_V": 4.052380000000078,
+          "max_abs_input_current_A": 7.94983764e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.70496517,
+          "outn_V": 2.71198191,
+          "incremental_gain_V_per_V": 4.097999999999935,
+          "max_abs_input_current_A": 7.15485183e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.70160292,
+          "outn_V": 2.70866239,
+          "incremental_gain_V_per_V": 4.152434999999732,
+          "max_abs_input_current_A": 2.42193417e-18
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.6990566,
+          "outn_V": 2.70614854,
+          "incremental_gain_V_per_V": 4.194594999999968,
+          "max_abs_input_current_A": 7.15485101e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.90888589,
+          "outn_V": 2.51055529,
+          "incremental_gain_V_per_V": 3.960795000000017,
+          "max_abs_input_current_A": 7.94983863e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.90822703,
+          "outn_V": 2.50458635,
+          "incremental_gain_V_per_V": 4.012155000000073,
+          "max_abs_input_current_A": 7.94981098e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.90777051,
+          "outn_V": 2.50001593,
+          "incremental_gain_V_per_V": 4.051865000000099,
+          "max_abs_input_current_A": 7.94877046e-10
+        }
+      ]
+    },
+    {
+      "corner": "tt_mm",
+      "temperature_C": 27,
+      "supply_V": 3.3,
+      "mismatch_seed": 304,
+      "output_differential_offset_V": -9.423999999969013e-05,
+      "supply_current_A_including_reference_leg": 4.98151004e-05,
+      "output_common_mode_V": 2.7150336299999998,
+      "max_nominal_input_current_A": 1.68595383e-18,
+      "gain_10Hz_V_per_V": 4.15143213,
+      "differential_Zin_10Hz_ohm": 1179223870.0,
+      "input_noise_0p5_to_45Hz_Vrms": 5.72677483e-07,
+      "source_imbalance_10k_CMRR_dB": {
+        "50": 91.59948317993589,
+        "60": 90.42540949432875
+      },
+      "negative_leg_imbalance_10k_CMRR_dB": {
+        "50": 90.28941032844195,
+        "60": 89.3358101823032
+      },
+      "dc_offset_cases": [
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.51597159,
+          "outn_V": 2.9210257,
+          "incremental_gain_V_per_V": 3.9516100000001053,
+          "max_abs_input_current_A": 7.94664092e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.51002604,
+          "outn_V": 2.92043567,
+          "incremental_gain_V_per_V": 4.002950000000283,
+          "max_abs_input_current_A": 7.94672339e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50546847,
+          "outn_V": 2.9200263,
+          "incremental_gain_V_per_V": 4.042674999999996,
+          "max_abs_input_current_A": 7.94675053e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.71826448,
+          "outn_V": 2.71836444,
+          "incremental_gain_V_per_V": 4.096639999999763,
+          "max_abs_input_current_A": 7.15207354e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.71498651,
+          "outn_V": 2.71508075,
+          "incremental_gain_V_per_V": 4.151314999999878,
+          "max_abs_input_current_A": 1.68595383e-18
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.71250029,
+          "outn_V": 2.71258816,
+          "incremental_gain_V_per_V": 4.193709999999795,
+          "max_abs_input_current_A": 7.15207258e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.92058069,
+          "outn_V": 2.51564102,
+          "incremental_gain_V_per_V": 3.9533500000001887,
+          "max_abs_input_current_A": 7.94675136e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91999137,
+          "outn_V": 2.50968409,
+          "incremental_gain_V_per_V": 4.00473999999984,
+          "max_abs_input_current_A": 7.94672302e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.9195842,
+          "outn_V": 2.50511596,
+          "incremental_gain_V_per_V": 4.044475000000158,
+          "max_abs_input_current_A": 7.94664007e-10
+        }
+      ]
+    },
+    {
+      "corner": "tt_mm",
+      "temperature_C": 27,
+      "supply_V": 3.3,
+      "mismatch_seed": 305,
+      "output_differential_offset_V": -0.00298670000000012,
+      "supply_current_A_including_reference_leg": 5.023871e-05,
+      "output_common_mode_V": 2.70997572,
+      "max_nominal_input_current_A": 1.14172284e-18,
+      "gain_10Hz_V_per_V": 4.14659291,
+      "differential_Zin_10Hz_ohm": 1179129220.0,
+      "input_noise_0p5_to_45Hz_Vrms": 5.73241008e-07,
+      "source_imbalance_10k_CMRR_dB": {
+        "50": 89.6301632050939,
+        "60": 88.77426911105779
+      },
+      "negative_leg_imbalance_10k_CMRR_dB": {
+        "50": 92.20760618922684,
+        "60": 90.92149068031071
+      },
+      "dc_offset_cases": [
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.5086591,
+          "outn_V": 2.91635528,
+          "incremental_gain_V_per_V": 3.9534150000000157,
+          "max_abs_input_current_A": 7.94729823e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50266535,
+          "outn_V": 2.91572588,
+          "incremental_gain_V_per_V": 4.004785000000011,
+          "max_abs_input_current_A": 7.94839031e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.49807376,
+          "outn_V": 2.9152894,
+          "incremental_gain_V_per_V": 4.044454999999836,
+          "max_abs_input_current_A": 7.94841729e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.71180127,
+          "outn_V": 2.71477362,
+          "incremental_gain_V_per_V": 4.091884999999795,
+          "max_abs_input_current_A": 7.15357363e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.70848237,
+          "outn_V": 2.71146907,
+          "incremental_gain_V_per_V": 4.146549999999971,
+          "max_abs_input_current_A": 1.14172284e-18
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.70596732,
+          "outn_V": 2.70896477,
+          "incremental_gain_V_per_V": 4.1887999999998815,
+          "max_abs_input_current_A": 7.15357264e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91486957,
+          "outn_V": 2.51321992,
+          "incremental_gain_V_per_V": 3.9511899999999933,
+          "max_abs_input_current_A": 7.94841821e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91424563,
+          "outn_V": 2.50726214,
+          "incremental_gain_V_per_V": 4.002424999999921,
+          "max_abs_input_current_A": 7.94838975e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91381403,
+          "outn_V": 2.50269763,
+          "incremental_gain_V_per_V": 4.042150000000078,
+          "max_abs_input_current_A": 7.94729736e-10
+        }
+      ]
+    },
+    {
+      "corner": "tt_mm",
+      "temperature_C": 27,
+      "supply_V": 3.3,
+      "mismatch_seed": 306,
+      "output_differential_offset_V": -0.004759659999999943,
+      "supply_current_A_including_reference_leg": 5.0101015e-05,
+      "output_common_mode_V": 2.70596338,
+      "max_nominal_input_current_A": 1.02778378e-18,
+      "gain_10Hz_V_per_V": 4.19468033,
+      "differential_Zin_10Hz_ohm": 1178771640.0,
+      "input_noise_0p5_to_45Hz_Vrms": 5.77566339e-07,
+      "source_imbalance_10k_CMRR_dB": {
+        "50": 86.9217207198162,
+        "60": 86.37811497436394
+      },
+      "negative_leg_imbalance_10k_CMRR_dB": {
+        "50": 93.44795197236338,
+        "60": 92.03634815660311
+      },
+      "dc_offset_cases": [
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50217359,
+          "outn_V": 2.91605385,
+          "incremental_gain_V_per_V": 3.9932350000000394,
+          "max_abs_input_current_A": 7.95033067e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.49612223,
+          "outn_V": 2.91545732,
+          "incremental_gain_V_per_V": 4.044975000000006,
+          "max_abs_input_current_A": 7.95030269e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.49148422,
+          "outn_V": 2.91504636,
+          "incremental_gain_V_per_V": 4.085055000000004,
+          "max_abs_input_current_A": 7.94672433e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.70693895,
+          "outn_V": 2.71165367,
+          "incremental_gain_V_per_V": 4.139389999999965,
+          "max_abs_input_current_A": 7.15529479e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.70358355,
+          "outn_V": 2.70834321,
+          "incremental_gain_V_per_V": 4.194589999999998,
+          "max_abs_input_current_A": 1.02778378e-18
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.7010385,
+          "outn_V": 2.70583451,
+          "incremental_gain_V_per_V": 4.23729000000006,
+          "max_abs_input_current_A": 7.15529389e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91181417,
+          "outn_V": 2.50710311,
+          "incremental_gain_V_per_V": 3.998775000000121,
+          "max_abs_input_current_A": 7.94672526e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91117846,
+          "outn_V": 2.50109715,
+          "incremental_gain_V_per_V": 4.050745000000022,
+          "max_abs_input_current_A": 7.95030284e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.91073623,
+          "outn_V": 2.49649616,
+          "incremental_gain_V_per_V": 4.090995000000097,
+          "max_abs_input_current_A": 7.95032974e-10
+        }
+      ]
+    },
+    {
+      "corner": "tt_mm",
+      "temperature_C": 27,
+      "supply_V": 3.3,
+      "mismatch_seed": 307,
+      "output_differential_offset_V": 0.01092451999999966,
+      "supply_current_A_including_reference_leg": 5.13997112e-05,
+      "output_common_mode_V": 2.69486275,
+      "max_nominal_input_current_A": 1.85866324e-18,
+      "gain_10Hz_V_per_V": 4.16294071,
+      "differential_Zin_10Hz_ohm": 1178980260.0,
+      "input_noise_0p5_to_45Hz_Vrms": 5.91569795e-07,
+      "source_imbalance_10k_CMRR_dB": {
+        "50": 91.88904053525914,
+        "60": 91.00698808192621
+      },
+      "negative_leg_imbalance_10k_CMRR_dB": {
+        "50": 85.03715594771197,
+        "60": 84.64173830810154
+      },
+      "dc_offset_cases": [
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50104907,
+          "outn_V": 2.89698147,
+          "incremental_gain_V_per_V": 3.981505000000052,
+          "max_abs_input_current_A": 7.94963569e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.49502263,
+          "outn_V": 2.89623994,
+          "incremental_gain_V_per_V": 4.033180000000192,
+          "max_abs_input_current_A": 7.94960742e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.4904148,
+          "outn_V": 2.89572659,
+          "incremental_gain_V_per_V": 4.073044999999942,
+          "max_abs_input_current_A": 7.94793767e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.7036915,
+          "outn_V": 2.692841,
+          "incremental_gain_V_per_V": 4.108329999999771,
+          "max_abs_input_current_A": 7.1546694e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.70032501,
+          "outn_V": 2.68940049,
+          "incremental_gain_V_per_V": 4.162655000000015,
+          "max_abs_input_current_A": 1.85866324e-18
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.69778068,
+          "outn_V": 2.68680159,
+          "incremental_gain_V_per_V": 4.205035000000024,
+          "max_abs_input_current_A": 7.15466848e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.90610859,
+          "outn_V": 2.48888438,
+          "incremental_gain_V_per_V": 3.9726200000000933,
+          "max_abs_input_current_A": 7.94793861e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.9054193,
+          "outn_V": 2.48276985,
+          "incremental_gain_V_per_V": 4.024124999999934,
+          "max_abs_input_current_A": 7.94960804e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.90494281,
+          "outn_V": 2.47809592,
+          "incremental_gain_V_per_V": 4.063875000000161,
+          "max_abs_input_current_A": 7.94963481e-10
+        }
+      ]
+    },
+    {
+      "corner": "tt_mm",
+      "temperature_C": 27,
+      "supply_V": 3.3,
+      "mismatch_seed": 308,
+      "output_differential_offset_V": 0.0018968400000001218,
+      "supply_current_A_including_reference_leg": 5.08158096e-05,
+      "output_common_mode_V": 2.69958965,
+      "max_nominal_input_current_A": 7.22447796e-19,
+      "gain_10Hz_V_per_V": 4.16238413,
+      "differential_Zin_10Hz_ohm": 1179106210.0,
+      "input_noise_0p5_to_45Hz_Vrms": 5.73209881e-07,
+      "source_imbalance_10k_CMRR_dB": {
+        "50": 92.87012992061847,
+        "60": 91.46190073931254
+      },
+      "negative_leg_imbalance_10k_CMRR_dB": {
+        "50": 88.81233339695069,
+        "60": 88.06492835397529
+      },
+      "dc_offset_cases": [
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.50047985,
+          "outn_V": 2.90510831,
+          "incremental_gain_V_per_V": 3.9751500000000384,
+          "max_abs_input_current_A": 7.94735091e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.4944435,
+          "outn_V": 2.90441205,
+          "incremental_gain_V_per_V": 4.0267549999999375,
+          "max_abs_input_current_A": 7.94788817e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": -0.1,
+          "outp_V": 2.48982563,
+          "outn_V": 2.90392866,
+          "incremental_gain_V_per_V": 4.066600000000031,
+          "max_abs_input_current_A": 7.94791499e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.7039011,
+          "outn_V": 2.70202672,
+          "incremental_gain_V_per_V": 4.107584999999858,
+          "max_abs_input_current_A": 7.15312145e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.70053807,
+          "outn_V": 2.69864123,
+          "incremental_gain_V_per_V": 4.162185000000207,
+          "max_abs_input_current_A": 7.22447796e-19
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.0,
+          "outp_V": 2.69799468,
+          "outn_V": 2.69607949,
+          "incremental_gain_V_per_V": 4.204579999999902,
+          "max_abs_input_current_A": 7.15312055e-10
+        },
+        {
+          "input_cm_V": 1.2,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.90721081,
+          "outn_V": 2.49901327,
+          "incremental_gain_V_per_V": 3.9713949999999887,
+          "max_abs_input_current_A": 7.94791581e-10
+        },
+        {
+          "input_cm_V": 1.65,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.90654023,
+          "outn_V": 2.4929614,
+          "incremental_gain_V_per_V": 4.02289499999986,
+          "max_abs_input_current_A": 7.94788734e-11
+        },
+        {
+          "input_cm_V": 2.1,
+          "differential_offset_V": 0.1,
+          "outp_V": 2.9060774,
+          "outn_V": 2.48833029,
+          "incremental_gain_V_per_V": 4.062695000000005,
+          "max_abs_input_current_A": 7.94734991e-10
+        }
+      ]
+    }
+  ]
+}

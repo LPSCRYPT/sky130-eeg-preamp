@@ -1,0 +1,29 @@
+{
+  "conditions": "TT, 27 C, 3.3 V, ideal 1.65 V and 8 uA, 10 kohm matched sources, zero offset. Linear R/C terminations only, no pad, package, buffer or recorder noise.",
+  "cases": [
+    {
+      "load": "core surrogate to VCM",
+      "R_ohm_per_leg": 4915000.0,
+      "C_F_per_leg": 1e-13,
+      "termination_V": 1.65,
+      "output_common_mode_V": 2.70445272,
+      "differential_gain_10Hz": 4.15576863
+    },
+    {
+      "load": "10 Mohm / 15 pF to ground",
+      "R_ohm_per_leg": 10000000.0,
+      "C_F_per_leg": 1.5e-11,
+      "termination_V": 0,
+      "output_common_mode_V": 2.70251285,
+      "differential_gain_10Hz": 4.17065618
+    },
+    {
+      "load": "1 Mohm / 20 pF to ground",
+      "R_ohm_per_leg": 1000000.0,
+      "C_F_per_leg": 2e-11,
+      "termination_V": 0,
+      "output_common_mode_V": 2.62067754,
+      "differential_gain_10Hz": 4.04432341
+    }
+  ]
+}

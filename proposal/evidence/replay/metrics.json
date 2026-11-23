@@ -1,0 +1,205 @@
+{
+  "scope": "Single Rev G Xschem-netlisted DUT, not layout extraction or silicon. No transient noise, pads, ADC, active receiver or electrode interface other than series resistance.",
+  "fixture": {
+    "file": "eeg_oz.csv",
+    "sha256": "bc2e0c6320aabdbf6a39b248b57158143a956ae21b363467e51ce10e121007f1",
+    "source_csv": "https://raw.githubusercontent.com/orpheus016/sg13cmos5l_spma_ip__instramp/032fcfca79c82cba84269662a915b4293ce339d0/docs/biosignal/data/eeg_oz.csv",
+    "upstream_attribution": "https://github.com/orpheus016/sg13cmos5l_spma_ip__instramp/blob/032fcfca79c82cba84269662a915b4293ce339d0/docs/biosignal/data/ATTRIBUTION.md",
+    "dataset": "Schalk G. EEG Motor Movement/Imagery Dataset (version 1.0.0), PhysioNet. DOI: 10.13026/C28G6P.",
+    "dataset_url": "https://physionet.org/content/eegmmidb/1.0.0/",
+    "record_url": "https://physionet.org/files/eegmmidb/1.0.0/S001/S001R02.edf",
+    "license": "Open Data Commons Attribution License (ODC-By) v1.0",
+    "license_url": "https://opendatacommons.org/licenses/by/1-0/",
+    "excerpt": "S001, R02 eyes-closed baseline, electrode Oz, [10, 14) s, 640 samples at 160 Hz. The earlier amplifier project converted to volts, removed the window mean and rebased the time to zero. No filtering, resampling or other change to its CSV here."
+  },
+  "samples": 640,
+  "sample_rate_Hz": 160,
+  "EEG_peak_to_peak_uV": 377.0,
+  "EEG_rms_uV": 62.30925957521182,
+  "dut": "afe/runs/hiz-size-g/tbci_native_input.spice",
+  "dut_sha256": "0292426692c3abbda6843b83bd28b3bd1e3854ef3a97e24b759a5650a6de0c74",
+  "bench_template_sha256": "de52a181d4fd25b7587b9a0ac069aa71c7fccf443e96e6c18e1dfe9ba0e17793",
+  "ngspice_version": "ngspice-47 : Circuit level simulation program",
+  "PDK": "Sky130A",
+  "PDK_sources": "open_pdks 1689ac3f2dc763876eaf967227c7dfe831b031ae",
+  "model_library_sha256": "17c208a699228f5acb87bf59c09c22a4c4d3937b6766b4957737d34e8e075f64",
+  "corner": "tt",
+  "temperature_C": 27,
+  "supply_V": 3.3,
+  "source_common_mode_V": 1.65,
+  "reference_sink_uA": 8,
+  "load_per_output_to_VCM": "4.915 MOhm parallel 100 fF",
+  "method": "DC operating point with constant electrode offset. Two quiet sample periods, one-period ramp to first CSV value, PWL to last CSV value held to 4 s. Input is differential: VCM +/- (offset + EEG)/2. Compare all 640 original times. No lag fit, smoothing, noise injection or input null.",
+  "fixed_calibration_V_per_V": 4.155898536620231,
+  "error_definition": "Subtract separately observed quiet OUTP-OUTN at the same static offset before replay (not an on-chip offset servo). Pearson r and fitted slope use centered vectors. Fixed NRMSE = 100 * rms((OUTP-OUTN-quiet)/G_balanced - CSV)/rms(CSV); all cases share one balanced 0 mV slope. No per-case gain correction.",
+  "clipping_definition": "Count CSV sample instants with either output <= 0.050 V or >= 3.250 V (50 mV rail guard); not a linearity test. Output ranges are extrema of all saved simulator timepoints during the replay, including final hold.",
+  "cases": [
+    {
+      "source": "balanced",
+      "differential_offset_mV": 0,
+      "RP_ohm": 10000,
+      "RN_ohm": 10000,
+      "no_EEG_output_diff_V": -2.8898577753011523e-08,
+      "clipped_samples": 0,
+      "clipped_fraction": 0.0,
+      "outp_range_V": [
+        2.704046498477934,
+        2.704829838757132
+      ],
+      "outn_range_V": [
+        2.704075585556689,
+        2.70485876133639
+      ],
+      "gain_V_per_V": 4.155898536620231,
+      "pearson_r": 0.9999999392506222,
+      "gain_error_vs_balanced_pct": 0.0,
+      "fixed_gain_input_error_uVrms": 0.02181928476042019,
+      "fixed_gain_NRMSE_pct": 0.035017724346543905
+    },
+    {
+      "source": "P_high",
+      "differential_offset_mV": -100,
+      "RP_ohm": 20000,
+      "RN_ohm": 10000,
+      "no_EEG_output_diff_V": -0.41102653736498374,
+      "clipped_samples": 0,
+      "clipped_fraction": 0.0,
+      "outp_range_V": [
+        2.498546912252321,
+        2.499303874892798
+      ],
+      "outn_range_V": [
+        2.909601328583779,
+        2.910358384574129
+      ],
+      "gain_V_per_V": 4.015417288414379,
+      "pearson_r": 0.9999999417395575,
+      "gain_error_vs_balanced_pct": -3.3802858026485305,
+      "fixed_gain_input_error_uVrms": 2.1063406399752855,
+      "fixed_gain_NRMSE_pct": 3.38046167509466
+    },
+    {
+      "source": "N_high",
+      "differential_offset_mV": -100,
+      "RP_ohm": 10000,
+      "RN_ohm": 20000,
+      "no_EEG_output_diff_V": -0.41102643188243304,
+      "clipped_samples": 0,
+      "clipped_fraction": 0.0,
+      "outp_range_V": [
+        2.498546836535409,
+        2.499303889950336
+      ],
+      "outn_range_V": [
+        2.909601433720065,
+        2.910358279881113
+      ],
+      "gain_V_per_V": 4.015485276065945,
+      "pearson_r": 0.9999999463239897,
+      "gain_error_vs_balanced_pct": -3.3786498711894875,
+      "fixed_gain_input_error_uVrms": 2.1055056263820204,
+      "fixed_gain_NRMSE_pct": 3.3791215635302514
+    },
+    {
+      "source": "P_high",
+      "differential_offset_mV": 0,
+      "RP_ohm": 20000,
+      "RN_ohm": 10000,
+      "no_EEG_output_diff_V": 6.575075506276562e-08,
+      "clipped_samples": 0,
+      "clipped_fraction": 0.0,
+      "outp_range_V": [
+        2.704046594279323,
+        2.7048297771825
+      ],
+      "outn_range_V": [
+        2.704075566442345,
+        2.704858777904566
+      ],
+      "gain_V_per_V": 4.155886992310356,
+      "pearson_r": 0.9999999367517955,
+      "gain_error_vs_balanced_pct": -0.0002777813214782654,
+      "fixed_gain_input_error_uVrms": 0.030110056784225403,
+      "fixed_gain_NRMSE_pct": 0.04832356697784279
+    },
+    {
+      "source": "N_high",
+      "differential_offset_mV": 0,
+      "RP_ohm": 10000,
+      "RN_ohm": 20000,
+      "no_EEG_output_diff_V": 1.0702594810396704e-08,
+      "clipped_samples": 0,
+      "clipped_fraction": 0.0,
+      "outp_range_V": [
+        2.704046455536353,
+        2.704829816449357
+      ],
+      "outn_range_V": [
+        2.704075626861335,
+        2.704858737145959
+      ],
+      "gain_V_per_V": 4.155966356070797,
+      "pearson_r": 0.9999999385041448,
+      "gain_error_vs_balanced_pct": 0.0016318841754348057,
+      "fixed_gain_input_error_uVrms": 0.022770364619569668,
+      "fixed_gain_NRMSE_pct": 0.03654411041762449
+    },
+    {
+      "source": "P_high",
+      "differential_offset_mV": 100,
+      "RP_ohm": 20000,
+      "RN_ohm": 10000,
+      "no_EEG_output_diff_V": 0.4110265240223212,
+      "clipped_samples": 0,
+      "clipped_fraction": 0.0,
+      "outp_range_V": [
+        2.909573551632061,
+        2.910330225487436
+      ],
+      "outn_range_V": [
+        2.498574894374897,
+        2.499331743235457
+      ],
+      "gain_V_per_V": 4.015306116302409,
+      "pearson_r": 0.9999999450678948,
+      "gain_error_vs_balanced_pct": -3.382960846588845,
+      "fixed_gain_input_error_uVrms": 2.1080040210993576,
+      "fixed_gain_NRMSE_pct": 3.3831312319717792
+    },
+    {
+      "source": "N_high",
+      "differential_offset_mV": 100,
+      "RP_ohm": 10000,
+      "RN_ohm": 20000,
+      "no_EEG_output_diff_V": 0.41102663156963093,
+      "clipped_samples": 0,
+      "clipped_fraction": 0.0,
+      "outp_range_V": [
+        2.909573465571022,
+        2.91033016400362
+      ],
+      "outn_range_V": [
+        2.498574831349086,
+        2.499331722862407
+      ],
+      "gain_V_per_V": 4.015339105357775,
+      "pearson_r": 0.9999999459299269,
+      "gain_error_vs_balanced_pct": -3.3821670578311314,
+      "fixed_gain_input_error_uVrms": 2.1075684531803685,
+      "fixed_gain_NRMSE_pct": 3.382432189932188
+    }
+  ],
+  "offset_step_recovery": {
+    "bench": "afe/benches/native_recovery.spice",
+    "bench_sha256": "a07c743bfd787e1ef35c1cea6e80080dfc8ea78bf78bb52859a778bb46a1ee22",
+    "conditions": "Separate synthetic transient: rail and reference ramp; 10 kOhm per source, both polarities. Not the four-second EEG replay.",
+    "observation": "Sampled OUTP-OUTN at 5.9/9.9 ms during applied offsets and at 7.9/11.9 ms, 1.8 ms after the respective ramps back to zero ended. Not a settling-time bound.",
+    "startup_diff_V": -6.72209e-08,
+    "positive_response_V": 0.411028,
+    "positive_residual_V": 1.74411e-06,
+    "negative_response_V": -0.411028,
+    "negative_residual_V": -1.68545e-06,
+    "small_signal_response_V": 0.0207771,
+    "final_rail_V": 3.3
+  }
+}

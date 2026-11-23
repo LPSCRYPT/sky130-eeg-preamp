@@ -1,0 +1,58 @@
+** sch_path: /foss/designs/afe/xschem/tbci_hiz_input.sch
+.subckt tbci_hiz_input AVDD AVSS VCM IREF_SINK VINP VINN OUTP OUTN
+*.PININFO AVDD:B IREF_SINK:B VINP:I OUTN:O VINN:I OUTP:O AVSS:B VCM:I
+XMREF IREF_SINK IREF_SINK AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=3 W=80 nf=8 ad=11.6 as=14.5 pd=82.32 ps=102.9 nrd=0.003625
++ nrs=0.003625 sa=0 sb=0 sd=0 mult=1
+XMTAIL net1 IREF_SINK AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=3 W=320 nf=32 ad=46.4 as=49.3 pd=329.28 ps=349.86 nrd=0.00090625
++ nrs=0.00090625 sa=0 sb=0 sd=0 mult=1
+XRDEG0 net2 net1 AVSS sky130_fd_pr__res_high_po_0p69 L=7 mult=1
+XMIN0 OUTN VINP net2 net2 sky130_fd_pr__pfet_g5v0d10v5 L=8 W=320 nf=8 ad=46.4 as=58 pd=322.32 ps=402.9 nrd=0.00090625
++ nrs=0.00090625 sa=0 sb=0 sd=0 mult=1
+XRLOAD0 AVSS OUTN AVSS sky130_fd_pr__res_xhigh_po_0p35 L=13 mult=1
+xreturn0 VINP VCM AVSS tbci_bias_chain
+XRDEG1 net3 net1 AVSS sky130_fd_pr__res_high_po_0p69 L=7 mult=1
+XMIN1 OUTP VINN net3 net3 sky130_fd_pr__pfet_g5v0d10v5 L=8 W=320 nf=8 ad=46.4 as=58 pd=322.32 ps=402.9 nrd=0.00090625
++ nrs=0.00090625 sa=0 sb=0 sd=0 mult=1
+XRLOAD1 AVSS OUTP AVSS sky130_fd_pr__res_xhigh_po_0p35 L=13 mult=1
+xreturn1 VINN VCM AVSS tbci_bias_chain
+.ends
+
+* expanding   symbol:  tbci_bias_chain.sym # of pins=3
+** sym_path: /foss/designs/afe/xschem/tbci_bias_chain.sym
+** sch_path: /foss/designs/afe/xschem/tbci_bias_chain.sch
+.subckt tbci_bias_chain SIG VCM AVSS
+*.PININFO SIG:B VCM:B AVSS:B
+xs0 SIG net1 AVSS tbci_bias_return
+xs1 net1 net2 AVSS tbci_bias_return
+xs2 net2 net3 AVSS tbci_bias_return
+xs3 net3 MID AVSS tbci_bias_return
+xs4 MID net4 AVSS tbci_bias_return
+xs5 net4 net5 AVSS tbci_bias_return
+xs6 net5 net6 AVSS tbci_bias_return
+xs7 net6 VCM AVSS tbci_bias_return
+.ends
+
+
+* expanding   symbol:  tbci_bias_return.sym # of pins=3
+** sym_path: /foss/designs/afe/xschem/tbci_bias_return.sym
+** sch_path: /foss/designs/afe/xschem/tbci_bias_return.sch
+.subckt tbci_bias_return SIG VCM AVSS
+*.PININFO SIG:B VCM:B AVSS:B
+XR0 net1 SIG AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR1 net2 net1 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR2 net3 net2 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR3 net4 net3 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR4 net4 net5 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR5 net5 net6 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR6 net6 net7 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR7 net7 net8 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR8 net9 net8 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR9 net10 net9 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR10 net11 net10 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR11 net12 net11 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR12 net12 net13 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR13 net13 net14 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR14 net14 net15 AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+XR15 net15 VCM AVSS sky130_fd_pr__res_xhigh_po_0p35 L=860 mult=1
+.ends
+

@@ -1,0 +1,34 @@
+High-Z input candidate G, nominal power-up then both offset polarities, synthetic only
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include /foss/designs/afe/runs/hiz-size-g/tbci_native_input.spice
+.temp 27
+.options klu method=gear maxord=2 reltol=1e-4 abstol=1e-13 vntol=1e-7
+VDD avdd 0 PWL(0 0 1m 3.3)
+VRETURN vref 0 PWL(0 0 1m 1.65)
+IREF ref 0 PWL(0 0 1.2m 0 1.3m 8u)
+VDIFF diff 0 PWL(0 0 4m 0 4.1m 100m 6m 100m 6.1m 0 8m 0 8.1m -100m 10m -100m 10.1m 0 12m 0 12.1m 5m 14m 5m)
+EP psrc vref diff 0 0.5
+EN nsrc vref diff 0 -0.5
+RP psrc inp 10k
+RN nsrc inn 10k
+XDUT avdd 0 vref ref inp inn outp outn tbci_native_input
+RLP outp vref 4.915meg
+RLN outn vref 4.915meg
+CLP outp vref 100f
+CLN outn vref 100f
+.control
+save v(outp) v(outn) v(vref) v(avdd)
+tran 25u 14m 0 25u
+let vdiff = v(outp)-v(outn)
+let vcm = (v(outp)+v(outn))/2
+meas tran startup_cm find vcm at=3.9m
+meas tran startup_diff find vdiff at=3.9m
+meas tran positive_response find vdiff at=5.9m
+meas tran positive_residual find vdiff at=7.9m
+meas tran negative_response find vdiff at=9.9m
+meas tran negative_residual find vdiff at=11.9m
+meas tran small_signal_response find vdiff at=13.9m
+meas tran final_rail find v(avdd) at=14m
+quit
+.endc
+.end
