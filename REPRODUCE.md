@@ -13,6 +13,19 @@ cmp build/core/tbci_native_input.spice afe/runs/hiz-size-g/tbci_native_input.spi
 
 The frozen netlist includes both physical bias return cells. A simulator user can `.include` it and instantiate `tbci_native_input` directly; see the [ramp/offset bench](afe/benches/native_recovery.spice) for an example with voltages, source resistances, sink polarity and loads. The quoted noise and input impedance are differential and exclude pads. There is no complete layout or extracted netlist yet.
 
+## Check the public symbol and drawing
+
+```sh
+eda python3 tools/check_wiring.py
+eda xvfb-run -a xschem -q --rcfile /foss/designs/xschemrc --preinit 'set dark_colorscheme 0' \
+    --command 'xschem zoom_full; xschem print svg /foss/designs/build/core/tbci_native_input.svg' \
+    /foss/designs/afe/xschem/tbci_native_input.sch
+```
+
+The [consumer fixture](afe/benches/public_symbol.sch) names each physical pin of the public symbol, independently of its SPICE order. The check netlists that fixture, checks all eight connections against the released subcircuit, and traces each input's 128 series resistors to VCM with their bodies at AVSS. It runs a typical-corner power ramp with both input polarities through the generated hierarchy and checks the signs of the differential output and currents. The SVG command redraws the **same source** used for the netlist; the [proposed slot diagram](proposal/bench.svg) is not an electrical simulation, PCB pinout or layout sign-off.
+
+Reference result (TT, 27 °C, 3.3 V, ideal sources, pre-layout): `VINP − VINN` of +100 mV and −100 mV produced `OUTP − OUTN` of +0.411036 V and −0.411036 V, respectively. In both cases 8.00 µA flowed **out of** `IREF_SINK` into the external sink and the supply delivered 50.6 µA. These are core-level observations, not package-pin measurements.
+
 ## Stress, mismatch and startup
 
 ```sh

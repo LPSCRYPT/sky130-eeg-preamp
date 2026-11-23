@@ -1,15 +1,17 @@
 # Sky130 EEG preamplifier with electrode-offset headroom
 
-**[Read the anonymous Chipalooza #4 proposal (PDF)](proposal/chipalooza-4-eeg-preamp.pdf)** · [Design and target specifications](proposal/proposal.md) · [Measurement plan](proposal/measurement.md) · [Simulation evidence](proposal/evidence.md)
+**[Read the anonymous Chipalooza #4 proposal (PDF)](proposal/chipalooza-4-eeg-preamp.pdf)** · [Fixed proposal release](https://github.com/LPSCRYPT/sky130-eeg-preamp/releases/tag/proposal-v1) · [Target specifications](proposal/proposal.md) · [Measurement plan](proposal/measurement.md) · [Simulation evidence](proposal/evidence.md)
 
 One reusable, DC-coupled differential preamplifier for weak biopotentials on a 3.3 V Sky130A analog supply. The design question: can a small EEG variation be amplified in the presence of a much larger differential electrode offset, without first nulling that offset? A native NMOS input pair with resistive source degeneration trades voltage gain for headroom. The block amplifies the offset too; it does **not** cancel DC.
+
+**Which drawing is wired?** The [Rev G electrical schematic](afe/runs/hiz-size-g/tbci_native_input.svg) is exported from the editable IC design. The [bench connection diagram](proposal/bench.svg) instead describes the **proposed** slot wrapper, bias adapter and buffered test ports. Its line numbers are logical, not package pins. Neither drawing is a PCB layout.
 
 | Read or reuse | Artifact |
 |---|---|
 | Editable one-channel circuit and symbol | [Xschem schematic](afe/xschem/tbci_native_input.sch), [symbol](afe/xschem/tbci_native_input.sym), [drawing](afe/runs/hiz-size-g/tbci_native_input.svg) |
 | SPICE integration | [Hierarchical subcircuit](afe/runs/hiz-size-g/tbci_native_input.spice) · pin order: `AVDD AVSS VCM IREF_SINK VINP VINN OUTP OUTN` |
 | Core operating-point, noise, rejection and offset sweeps | [Seven selected process/temperature/supply conditions](afe/runs/hiz-stress-g/metrics.json) · [eight separate typical-corner mismatch seeds](afe/runs/hiz-mismatch-g/metrics.json) |
-| Independent review | [Reproduce with open tools](REPRODUCE.md) · [measurement schematic](proposal/bench.svg) · [competition requirements](https://opencircuitdesign.com/chipalooza/rules-4.html) |
+| Independent review | [Reproduce the electrical wiring checks](REPRODUCE.md#check-the-public-symbol-and-drawing) · [measurement plan](proposal/measurement.md) · [competition requirements](https://opencircuitdesign.com/chipalooza/rules-4.html) |
 | Optional trusted-BCI software demonstrator | [Prove a private decoder margin is above or below a threshold](companion/README.md); runs on a host with synthetic data, not on the analog chip. |
 
 **What exists:** transistor-level core, editable sources, open testbenches and pre-layout results. Nominal gain is 4.16 V/V, not programmable. Across 63 offset/common-mode operating points in seven selected conditions, incremental gain stayed at or above 95.1% of each condition’s nominal 10 Hz gain. Coverage is not a yield estimate. Output common mode is about 2.70 V at nominal supply; outputs are not 1.8 V ADC pins.

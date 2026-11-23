@@ -12,13 +12,15 @@ A sensor-interface SoC could use this stage **before** level translation, offset
 
 Each input drives a large native NMOS gate and returns to a quiet 1.65 V reference through 128 series sections of high-resistance polysilicon. The resistor strings establish a DC path without a clock or switched input. Each input transistor has 128 fingers, 10 µm wide by 4 µm long per finger. Source degeneration trades gain for linear range; two drain resistors convert the steered current to voltage. The outputs are named so increasing VINP relative to VINN increases OUTP relative to OUTN. The core's diode-connected PMOS bias leg requires a current **withdrawn** from `IREF_SINK`; its PMOS copy drives the NMOS tail mirror. No bias generator is implicit in the core.
 
+![Implemented circuit: transistor-level export from the Rev G Xschem source. Repeated labels connect the same net. VINP controls the OUTN branch and VINN controls the OUTP branch, giving positive differential gain when the readout takes OUTP minus OUTN.](../afe/runs/hiz-size-g/tbci_native_input.svg){width=100%}
+
 ## External resources and test ports
 
 Standalone core pin order: `AVDD AVSS VCM IREF_SINK VINP VINN OUTP OUTN`. The following are **requested logical connections**, not assigned package pin numbers.
 
 | Core connection | Direction at core | Proposed Challenge #4 connection and reason |
 |---------------|-----------------|--------------------------------------------------------------|
-| VINP, VINN | Analog inputs | Dedicated 3.3 V analog pad 1 and pad 2, respectively; no shared input mux. Match routing, capacitance and leakage. Use standard protected pads; retain ESD structures in the model and measurement. |
+| VINP, VINN | Analog inputs | Request one dedicated 3.3 V analog pad for each input; no shared input mux. Match routing, capacitance and leakage. Use standard protected pads; retain ESD structures in the model and measurement. Physical pad numbers are unassigned. |
 | OUTP, OUTN | Analog outputs | High-impedance drains, **not** pad drivers. Two planned high-input-impedance, nominally unity-gain buffers feed shared analog lines 1 and 2 through the harness mux. Read both simultaneously; no external drive or 50 Ω termination. |
 | VCM | Analog reference input | Shared analog line 3, driven from a quiet, low-impedance external 1.65 V source while this slot is selected. Keep it fixed when sweeping the two signal inputs together. Confirm bidirectional bus routing, noise and settling; do not assume the on-chip voltage reference provides 1.65 V. |
 | IREF_SINK | Bias port; current exits core | Request **one sourced** harness reference. Feed a diode-connected NMOS in the wrapper; its scaled NMOS mirror pulls 8 µA nominal from the core port toward AVSS. Set the mirror ratio only after confirmation of delivered current, compliance and startup. No external bias pin and no direct source-to-source connection. |

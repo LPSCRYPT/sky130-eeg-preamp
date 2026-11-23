@@ -2,11 +2,13 @@
 
 **Question (§6.5):** Does a packaged channel still amplify a small differential signal when its two synthetic electrodes differ by 100 mV DC? Measure at the package pins; an isolated-core simulation is not a substitute. No body connection or stimulation.
 
-![Proposed package test paths. The dedicated pins carry inputs; the shared analog bus never directly loads a core drain.](bench.svg)
+![Proposed package wiring, not a PCB or an assigned pinout. Squares are the two dedicated input pads; triangles are the planned non-inverting monitor buffers. Arrows on the mirror drains show conventional current toward AVSS.](bench.svg)
 
 ### Wiring and calibration
 
-Use two dedicated 3.3 V analog pads for VINP and VINN. Select only this slot on the shared analog mux: two lines for separately buffered OUTP and OUTN, one **input** for a quiet external 1.65 V core bias-return reference (VCM); the fourth is unused. Bus numbers in the figure are logical, not assigned package pins. Supply AVDD at 3.3 V nominal relative to AVSS. One harness reference **sources** current into a proposed on-chip NMOS mirror; its output **sinks** 8 µA nominal from IREF_SINK toward AVSS. Do not drive that node with a sourcing reference. Mirror ratio/compliance, pad selection, buffer swing and bus loading are integration gates, not demonstrated features.
+Drive VINP and VINN through separate calibrated resistors and dedicated 3.3 V analog pads. Select only this slot on the shared analog mux. Read buffered OUTP on line 1 and buffered OUTN on line 2; compute P minus N, so increasing VINP relative to VINN gives a positive change. Drive line 3 **into** VCM from a quiet external 1.65 V source; do not use it as the fixture ground. Leave line 4 unused. These line numbers denote requested roles, not assigned package pins. Supply AVDD at 3.3 V nominal and reference both drive and readout to AVSS.
+
+The proposed wrapper has two separate NMOS drain paths. The harness current source feeds the **diode-connected reference leg**, setting the common gate voltage. Current in the **sink leg** comes from the core: 8 µA nominal leaves `IREF_SINK` through the mirror output transistor to AVSS. The harness source does not drive the core port, and no external bias pin is requested. Mirror ratio and compliance, pad selection, buffer swing and bus loading remain integration gates.
 
 The isolated bench uses 4.915 MΩ ∥ 100 fF from **each drain** to VCM and predicts about 2.70 V output common mode. This is a receiver surrogate, **not** a package termination. Characterize the actual buffer input admittance, output headroom, stability and noise with extracted mux/package and intended cable/recorder load. Use high-impedance readout, not 50 Ω termination. Measure both outputs simultaneously; retain both DC levels as well as their difference.
 
